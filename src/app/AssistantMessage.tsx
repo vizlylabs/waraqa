@@ -49,9 +49,9 @@ const AssistantMessage: React.FC<AssistantMessageProps> = ({
     if (!pyodide) return;
 
     const output = await runPythonCode(pyodide, currentContent);
-    console.log("The current content:", currentContent);
-    console.log("The output:", output);
-    console.log("The index:", index);
+    // console.log("The current content:", currentContent);
+    // console.log("The output:", output);
+    // console.log("The index:", index);
 
     updateMessageOutput(index, output);
   };

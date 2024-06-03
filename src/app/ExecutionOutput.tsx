@@ -32,7 +32,7 @@ const PlotlyEditor = dynamic(() => import("react-chart-editor"), {
 // @ts-ignore
 // const PlotlyEditor = lazy(() => import("react-chart-editor"));
 
-const INITIAL_PLOTLY_HEIGHT = 400;
+const INITIAL_PLOTLY_HEIGHT = 480;
 
 interface ExecutionOutputProps {
   output: string | { type: string; data: string };
@@ -68,8 +68,8 @@ const ExecutionOutput: React.FC<ExecutionOutputProps> = ({ output }) => {
     return <Text>{stringOutput}</Text>;
   }
 
-  // If output type is unknown, return null
-  return null;
+  // If output type is unknown, return it stringified
+  return JSON.stringify(output);
 };
 
 interface PlotlyOutputProps {

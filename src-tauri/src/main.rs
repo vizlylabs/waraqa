@@ -91,6 +91,7 @@ async fn ask_openai(api_key_or_port: String, question: String, csv_data: String,
         - If provided a data or visualization question, you always try to answer in a visualization. You use Plotly to answer all visualization queries.
         - If the question is not data-related or cannot be answered with a visualization, answer conversationally. If a question is not related to previous messages, treat it as a new conversation - do NOT just copy previous responses.
         - If you want to respond to the user with a message, you MUST use a print statement.
+        - If displaying a visualization with categories, you MUST use different colors for each category. Make the visualizations understandable and aesthetically pleasing.
         
         The data you will be analyzing is the following. This map includes the file name as the key and df.info() on a truncated subset of the file as the value. Leverage these qualities of the dataset to answer the user's questions.
 {:?}"#,

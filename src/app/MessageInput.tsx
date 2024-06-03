@@ -106,14 +106,21 @@ output = None
 fig_json = None
 local_scope = {}
 try:
-    exec('''${code
+    exec("""${code
       .split("\n")
       .map((line) => line.trim())
-      .join("\n")}''', globals(), local_scope)
+      .join("\\n")}""", globals(), local_scope)
     if 'output' in local_scope and isinstance(local_scope['output'], pd.DataFrame):
         output = capture_df_display(local_scope['output'])
     else:
-        output = mystdout.getvalue().strip()
+        # Capture the last variable in the scope
+        last_var = list(local_scope.values())[-1] if local_scope else None
+        if isinstance(last_var, pd.DataFrame):
+            output = capture_df_display(last_var)
+        elif isinstance(last_var, (str, int, float, list, dict)):
+            output = json.dumps(last_var)
+        else:
+            output = mystdout.getvalue().strip()
     for var_name, var_value in local_scope.items():
         if isinstance(var_value, go.Figure):
             fig_json = pio.to_json(var_value)
@@ -277,10 +284,20 @@ const MessageInput = () => {
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      setSelectedFiles((prevFiles) => [
-        ...prevFiles,
-        ...Array.from(e.target.files as FileList),
-      ]);
+      const files = Array.from(e.target.files as FileList);
+      const csvFiles = files.filter((file) => file.type === "text/csv");
+
+      if (csvFiles.length !== files.length) {
+        standaloneToast({
+          title: "Invalid file type",
+          description: "Only CSV files can currently be analyzed.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+
+      setSelectedFiles((prevFiles) => [...prevFiles, ...csvFiles]);
     }
   };
 
