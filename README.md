@@ -24,9 +24,10 @@ View a demo of how Waraqa works at [waraqa.ai](https://waraqa.ai).
 
 [Download](https://waraqa.ai/download)
 
-To manually build Waraqa locally, run:
+To manually build Waraqa locally, clone this repository and run:
 
 ```bash
+npm install
 npm run tauri build
 ```
 
