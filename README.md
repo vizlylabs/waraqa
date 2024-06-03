@@ -29,6 +29,10 @@ To manually build Waraqa locally, run:
 npm run tauri build
 ```
 
+### Windows
+
+Haven't tested this - might work?
+
 ## What does Waraqa mean?
 
 "Waraqa" is inspired by the Arabic word "وَرَقَة" (waraqa), which translates to "paper" or "leaf." I thought it would be a cool name that points to the simplicity of converting data to insights with AI, as well as the lightweight nature of doing data analysis with Pyodide. 
@@ -42,3 +46,7 @@ There is **so much** missing right now, but I wanted to force myself to put some
 - Visualization edits (actually already there, but commented out because it's ugly right now)
 - Persist chats and chat histories on local filesystem
 - and so much more.
+
+## Contributions
+
+We welcome contributions! If you would like to see a feature or come across any issues (you will), please feel free to raise a PR.
