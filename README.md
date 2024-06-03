@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <img alt="waraqa-icon" height="160px" src="https://waraqa.ai/waraqa.png" style="margin-bottom:20px">
+</div>
 
-## Getting Started
+# Waraqa
 
-First, run the development server:
+AI-powered data analysis, running privately on your machine.
+
+View a demo of how Waraqa works at [waraqa.ai](https://waraqa.ai).
+
+[![Waraqa Snapshot](https://waraqa.ai/waraqa-snapshot.png)](https://waraqa.ai)
+
+## Features
+
+- **Pyodide analysis environment**: Use Python in WebAssembly with Pyodide for lightweight data analysis.
+- **Interactive visualizations**: Create and interact with dynamic data visualizations, powered by Plotly.
+- **Flexible model selection**: Use OpenAI or Ollama as your model provider.
+- **Edit and re-execute code**: Easily re-execute and edit code to refine your analysis.
+
+## Download or install
+
+### macOS
+
+[Download](https://waraqa.ai/download)
+
+To manually build Waraqa locally, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run tauri build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What does Waraqa mean?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+"Waraqa" is inspired by the Arabic word "وَرَقَة" (waraqa), which translates to "paper" or "leaf." I thought it would be a cool name that points to the simplicity of converting data to insights with AI, as well as the lightweight nature of doing data analysis with Pyodide. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Roadmap
 
-## Learn More
+There is **so much** missing right now, but I wanted to force myself to put something out there. A few things missing include:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Support for more file types (only supports .csvs right now)
+- Robust response handling - currently relying on model to print string or Plotly outputs from Pyodide
+- Visualization edits (actually already there, but commented out because it's ugly right now)
+- Persist chats and chat histories on local filesystem
+- and so much more.
