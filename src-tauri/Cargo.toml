@@ -1,0 +1,30 @@
+[package]
+name = "app"
+version = "0.1.0"
+description = "Waraqa"
+authors = ["samisahn", "alishobeiri"]
+license = ""
+repository = ""
+default-run = "app"
+edition = "2021"
+rust-version = "1.60"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.5.2", features = [] }
+
+[dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+async-openai = "0.21.0"
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.6.5", features = [ "devtools", "dialog-all", "window-hide", "window-unminimize", "window-start-dragging", "window-show", "window-close", "window-maximize", "window-minimize", "window-unmaximize"] }
+tokio = { version = "1", features = ["full"] }
+futures = "0.3.26"
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
+# If you use cargo directly instead of tauri's cli you can use this feature flag to switch between tauri's `dev` and `build` modes.
+# DO NOT REMOVE!!
+custom-protocol = [ "tauri/custom-protocol" ]
