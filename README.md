@@ -41,6 +41,7 @@ Haven't tested this - might work?
 
 There is **so much** missing right now, but I wanted to force myself to put something out there. A few things missing include:
 
+- Figure out signing/notarizing Tauri apps 😅
 - Support for more file types (only supports .csvs right now)
 - Robust response handling - currently relying on model to print string or Plotly outputs from Pyodide
 - Visualization edits (actually already there, but commented out because it's ugly right now)
