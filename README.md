@@ -46,6 +46,8 @@ There is **so much** missing right now, but I wanted to force myself to put some
 - Figure out signing/notarizing Tauri apps 😅
 - Support for more file types (only supports .csvs right now)
 - Robust response handling - currently relying on model to print string or Plotly outputs from Pyodide
+- Support function calling for Ollama
+- Support multi-cell responses and markdown outputs
 - Visualization edits (actually already there, but commented out because it's ugly right now)
 - Persist chats and chat histories on local filesystem
 - and so much more.
