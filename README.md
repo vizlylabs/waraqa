@@ -9,7 +9,7 @@ AI-powered data analysis, running privately on your machine.
 View a demo of how Waraqa works at [waraqa.ai](https://waraqa.ai).
 
 [![Waraqa Snapshot](https://waraqa.ai/waraqa-snapshot.png)](https://waraqa.ai)
-<p align="center"><sub>This snapshot shows a response that was OpenAI-powered response. The demo video shows use of local models via Ollama, but I had to go easier on it.</sub></p>
+<p align="center"><sub>This snapshot shows an OpenAI-powered response. The demo video shows use of local models via Ollama, but I had to go easier on it.</sub></p>
 
 ## Features
 
