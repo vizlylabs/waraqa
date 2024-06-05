@@ -43,7 +43,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.risha.io",
+      "identifier": "com.waraqa.ai",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
